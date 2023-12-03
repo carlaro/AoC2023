@@ -6,11 +6,11 @@
 #include <thread>
 #include "help_func.hpp"
 
-[[nodiscard]] int problem_1(std::vector<std::string>& input) {
+[[nodiscard]] int problem_1(std::vector<std::string> const &input) {
     std::unordered_map<std::string, int> boundaries{{"red", 12}, {"green", 13}, {"blue", 14}};
     int sum{};
 
-    for(std::string &s : input) {
+    for(std::string const &s : input) {
         auto split_vec = help_func::split(s, ": ");
         
 
@@ -48,12 +48,12 @@
     return sum;
 } 
 
-[[nodiscard]] int problem_2(std::vector<std::string>& input)
+[[nodiscard]] int problem_2(std::vector<std::string> const & input)
 {
     std::unordered_map<std::string, int> smallest_occurence;
     int sum{};
 
-    for(std::string &s : input) {
+    for(std::string const &s : input) {
         auto split_vec = help_func::split(s, ": ");
         
         smallest_occurence["red"] = 0;
