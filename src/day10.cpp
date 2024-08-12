@@ -271,6 +271,5 @@ int main(){
     t1.join();
     t2.join();
 
-    std::cout << t_sum_1 << "\n";
-    std::cout << t_sum_2 << "\n";
+    std::cout << "Day 10:" << t_sum_1  << ", " << t_sum_2 << " ";
 }

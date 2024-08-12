@@ -122,6 +122,5 @@ int main(){
     int answer_1 = problem_1(input);
     std::uint64_t answer_2 = problem_2(input);
 
-    std::cout << answer_1 << "\n";
-    std::cout << answer_2 << "\n";
+    std::cout << "Day 4:" << answer_1  << ", " << answer_2 << " ";
 }

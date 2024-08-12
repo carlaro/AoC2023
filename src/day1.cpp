@@ -142,8 +142,7 @@ int main()
     int answer_1 = find_solution(input, search_map_problem_1);
     int answer_2 = find_solution(input, search_map_problem_2);
 
-    std::cout << answer_1 << "\n";
-    std::cout << answer_2 << "\n";
+    std::cout << "Day 1:" << answer_1  << ", " << answer_2 << " ";
     
     return 0;
 }
