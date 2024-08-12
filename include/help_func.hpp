@@ -2,6 +2,7 @@
 #include <filesystem>
 #include <fstream>
 #include <vector>
+#include <cmath>
 #include <chrono>
 #include <functional>
 #include <algorithm>

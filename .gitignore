@@ -6,3 +6,7 @@ data/
 ## no need to add personal configurations
 .vscode
 
+## don't push the build directory
+build/
+
+

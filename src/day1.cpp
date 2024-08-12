@@ -124,7 +124,7 @@ class state_machine
 int main()
 {
     help_func::Timer t;
-    auto input = help_func::read_input("input-day-1.txt");
+    auto input = help_func::read_input("../data/input-day-1.txt");
 
     const std::unordered_map<std::string, int> search_map_problem_1{
         {"1", 1}, {"2", 2}, {"3", 3}, {"4", 4}, {"5", 5},
