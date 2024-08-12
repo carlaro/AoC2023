@@ -28,14 +28,21 @@ namespace help_func{
         return std::vector<std::string>(0);
     }
 
-    [[nodiscard]] std::vector<std::string> split(std::string s, std::string delim) {
+    [[nodiscard]] std::vector<std::string> split(const std::string &s, std::string delim, bool trim_empty = true) {
         std::vector<std::string> s_vec{};
         std::size_t search_from{};
         std::size_t found_at = s.find(delim, search_from);
         std::size_t offset = delim.size();
 
         while(found_at < s.npos) {
-            s_vec.push_back(s.substr(search_from, found_at - search_from));
+            std::size_t distance = found_at - search_from;
+            if(distance == 0 && trim_empty)
+            {
+                search_from += offset;
+                found_at = s.find(delim, search_from);
+                continue;
+            }
+            s_vec.push_back(s.substr(search_from, distance));
             search_from = found_at + offset;
             found_at = s.find(delim, search_from);
         }
@@ -55,6 +62,42 @@ namespace help_func{
     void trim(std::string& s) {
         help_func::ltrim(s);
         help_func::rtrim(s);
+    }
+
+    void ltrim_char(std::string& s, char c){
+        s.erase(s.begin(), std::find_if(s.begin(), s.end(), [c](auto c1) {return c != c1;}));
+    }
+
+    void rtrim_char(std::string& s, char c){
+        s.erase(std::find_if(s.rbegin(), s.rend(), [c](auto c1) {return c != c1;}).base(), s.end());
+    }
+
+    void trim_char(std::string& s, char c) {
+        help_func::ltrim_char(s, c);
+        help_func::rtrim_char(s, c);
+    }
+
+    [[nodiscard]] constexpr double gcd(double a, double b) {
+    double d = (a > b) ? b : a;
+    double n = (a > b) ? a : b;
+
+    double q = std::floor(n / d);
+    double r = n - d*q;
+    while(r != 0) {
+        n = d;
+        d = r;
+        q = std::floor(n / d);
+        r = n - d*q;
+    }
+    return d;
+}
+
+    [[nodiscard]] constexpr double lcm(double a, double b) {
+        if (std::numeric_limits<double>::max() / a < b) {
+            throw std::overflow_error("calculation will overflow!");
+        }
+
+        return a*b/gcd(a,b);
     }
 
     class Timer
