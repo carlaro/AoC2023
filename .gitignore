@@ -1,7 +1,5 @@
 ## The creator of the challenge asks participants to keep their personalized input hidden
 data/
-*.txt
-
 
 ## no need to add personal configurations
 .vscode
