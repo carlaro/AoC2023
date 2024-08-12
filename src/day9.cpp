@@ -151,7 +151,7 @@ void problem_2(const std::vector<std::string>& input, std::size_t n_threads){
 
 int main(){
     help_func::Timer t;
-    std::vector<std::string> input =help_func::read_input("input-day-9.txt");
+    std::vector<std::string> input =help_func::read_input("../data/input-day-9.txt");
     // std::vector<std::string> input =help_func::read_input("small_data.txt");
 
     std::size_t n_t{20};

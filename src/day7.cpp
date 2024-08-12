@@ -220,7 +220,7 @@ bool compare_hand_2(std::pair<std::string, std::uint64_t> &h1, std::pair<std::st
 
 int main(){
     help_func::Timer t;
-    std::vector<std::string> input =help_func::read_input("input-day-7.txt");
+    std::vector<std::string> input =help_func::read_input("../data/input-day-7.txt");
     // std::vector<std::string> input =help_func::read_input("small_data.txt");
 
     std::uint64_t answer_1 = problem_1(input);

@@ -165,7 +165,7 @@ bool is_symbol(char const &c) {
 
 int main(){
     help_func::Timer t;
-    std::vector<std::string> input =help_func::read_input("input-day-3.txt");
+    std::vector<std::string> input =help_func::read_input("../data/input-day-3.txt");
     // std::vector<std::string> input =help_func::read_input("small_data.txt");
 
     int answer_1 = problem_1(input);

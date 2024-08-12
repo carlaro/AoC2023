@@ -344,7 +344,7 @@ void fill_out_range(std::vector<Range> &r_vec, std::uint64_t max_seed)
 
 int main(){
     help_func::Timer t;
-    std::vector<std::string> input =help_func::read_input("input-day-5.txt");
+    std::vector<std::string> input =help_func::read_input("../data/input-day-5.txt");
     // std::vector<std::string> input =help_func::read_input("small_data.txt");
 
     std::uint64_t answer_1 = problem_1(input);

@@ -69,7 +69,7 @@
 
 int main(){
     help_func::Timer t;
-    std::vector<std::string> input =help_func::read_input("input-day-6.txt");
+    std::vector<std::string> input =help_func::read_input("../data/input-day-6.txt");
     // std::vector<std::string> input =help_func::read_input("small_data.txt");
 
     std::uint64_t answer_1 = problem_1(input);

@@ -92,7 +92,7 @@
 
 int main() {
     help_func::Timer t;
-    std::vector<std::string> input = help_func::read_input("input-day-2.txt");
+    std::vector<std::string> input = help_func::read_input("../data/input-day-2.txt");
 
     int answer_1 = problem_1(input);
     int answer_2 = problem_2(input);
