@@ -15,8 +15,6 @@
     for(auto &line: input){
 
         int res{};
-
-
         auto sub_string = help_func::split(line, ":");
         help_func::trim(sub_string[1]);
         auto target_and_result = help_func::split(sub_string[1], "|");
@@ -97,10 +95,11 @@
         number_of_winning_cards.push_back(res);
     }
 
-    std::vector<std::uint64_t> dynamic_programming_vector(number_of_winning_cards.size(), 1);
+    std::size_t number_of_tickets = input.size();
+    std::vector<std::uint64_t> dynamic_programming_vector(number_of_tickets, 1);
 
-    for(std::size_t i = 0; i < dynamic_programming_vector.size(); ++i) {
-        std::size_t copies_below = number_of_winning_cards[i];
+    for(std::size_t i = 0; i < number_of_tickets; ++i) {
+        std::uint64_t copies_below = number_of_winning_cards[i];
         for(std::size_t j = 0; j < copies_below; ++j){
             dynamic_programming_vector[i + j + 1] += dynamic_programming_vector[i];
         }
