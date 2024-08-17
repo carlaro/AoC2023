@@ -78,11 +78,17 @@ target_link_libraries(day11.out PUBLIC help_functions)
 target_link_libraries(day11.out PRIVATE Threads::Threads)
 target_include_directories(day11.out PRIVATE data)
 
-set_source_files_properties(src/day12.cpp PROPERTIES COMPILE_OPTIONS "-g;-fsanitize=leak;")
+set_source_files_properties(src/day12.cpp PROPERTIES COMPILE_OPTIONS "-g;-fsanitize=leak;-O3;")
 add_executable(day12.out src/day12.cpp)
 target_link_libraries(day12.out PUBLIC help_functions)
 target_link_libraries(day12.out PRIVATE Threads::Threads)
 target_include_directories(day12.out PRIVATE data)
+
+set_source_files_properties(src/day13.cpp PROPERTIES COMPILE_OPTIONS "-g;-fsanitize=leak;")
+add_executable(day13.out src/day13.cpp)
+target_link_libraries(day13.out PUBLIC help_functions)
+target_link_libraries(day13.out PRIVATE Threads::Threads)
+target_include_directories(day13.out PRIVATE data)
 
 ## This is ugly, but logs the results in the build log
 execute_process(COMMAND ${CMAKE_BINARY_DIR}/day1.out)
@@ -97,3 +103,4 @@ execute_process(COMMAND ${CMAKE_BINARY_DIR}/day9.out)
 execute_process(COMMAND ${CMAKE_BINARY_DIR}/day10.out)
 execute_process(COMMAND ${CMAKE_BINARY_DIR}/day11.out)
 execute_process(COMMAND ${CMAKE_BINARY_DIR}/day12.out)
+execute_process(COMMAND ${CMAKE_BINARY_DIR}/day13.out)
