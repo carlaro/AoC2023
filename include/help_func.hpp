@@ -52,6 +52,38 @@ namespace help_func{
         return s_vec;
     }
 
+    [[nodiscard]] std::string join(const std::string &s1, const std::string &s2, std::string delim = "") {
+        std::string ret;
+        ret.reserve(s1.size() + s2.size() + delim.size());
+        for(auto c : s1) {
+            ret.push_back(c);
+        }
+        for(auto c : delim) {
+            ret.push_back(c);
+        }
+        for(auto c : s2) {
+            ret.push_back(c);
+        }
+        return ret;
+    }
+
+    [[nodiscard]] std::string repeat_string(const std::string &s, std::size_t times, std::string padding = "", bool skip_last_pad = true) {
+        std::string ret;
+        ret.reserve(times* (s.size() + padding.size()));
+        for(size_t i = 0; i < times; ++i) {
+            for(auto c : s) {
+                ret.push_back(c);
+            }
+            if(i + 1 == times && skip_last_pad){
+                continue;
+            }
+            for(auto c : padding) {
+                ret.push_back(c);
+            }
+        }
+        return ret;
+    }
+
     void ltrim(std::string& s){
         s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](auto c) {return !std::isspace(c);}));
     }
